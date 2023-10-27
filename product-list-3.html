@@ -18,6 +18,7 @@
 
     <body>
         <website-header></website-header>
+
         <section class="bg-light bg-gradient">
             <div class="container py-5">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -28,13 +29,15 @@
                             >
                                 <img
                                     class="img-fluid"
-                                    src="./assets/img/products/roald-dahl-matilda.webp"
+                                    src="./assets/img/products/lewis-carrol-alices-adventures-in-wonderland.webp"
                                     alt=""
                                 />
                                 <hgroup class="py-2">
-                                    <h4 class="card-title">Matilda</h4>
-                                    <p class="card-text">Roald Dahl</p>
-                                    <span class="card-text">12.99 &euro;</span>
+                                    <h4 class="card-title">
+                                        Alice's adventures in Wonderland
+                                    </h4>
+                                    <p class="card-text">Lewis Carrol</p>
+                                    <span class="card-text">14.99 &euro;</span>
                                 </hgroup>
                                 <div
                                     class="d-grid gap-2 d-block d-lg-flex justify-content-lg-center mt-auto pt-1"
@@ -161,42 +164,7 @@
                             </div>
                         </article>
                     </div>
-                    <div class="col">
-                        <article class="card h-100 bg-white">
-                            <div
-                                class="card-body text-center d-flex flex-column"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="./assets/img/products/lewis-carrol-alices-adventures-in-wonderland.webp"
-                                    alt=""
-                                />
-                                <hgroup class="py-2">
-                                    <h4 class="card-title">
-                                        Alice's adventures in Wonderland
-                                    </h4>
-                                    <p class="card-text">Lewis Carrol</p>
-                                    <span class="card-text">14.99 &euro;</span>
-                                </hgroup>
-                                <div
-                                    class="d-grid gap-2 d-block d-lg-flex justify-content-lg-center mt-auto pt-1"
-                                >
-                                    <button
-                                        class="btn btn-primary me-md-2 w-100"
-                                        type="button"
-                                    >
-                                        Read more
-                                    </button>
-                                    <button
-                                        class="btn btn-warning w-100"
-                                        type="button"
-                                    >
-                                        Add to cart
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+
                     <div class="col">
                         <article class="card h-100 bg-white">
                             <div
@@ -240,8 +208,12 @@
             <div class="container">
                 <nav aria-label="Navigation between product-list pages">
                     <ul class="pagination justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
+                        <li class="page-item">
+                            <a
+                                class="page-link"
+                                href="product-list-2.html"
+                                aria-label="Previous"
+                            >
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
@@ -258,12 +230,8 @@
                                 >3</a
                             >
                         </li>
-                        <li class="page-item">
-                            <a
-                                class="page-link"
-                                href="product-list-2.html"
-                                aria-label="Next"
-                            >
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
