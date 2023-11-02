@@ -13,270 +13,500 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
         />
+        <link rel="stylesheet" href="./scss/styles.css" />
         <title>Parrot Books</title>
     </head>
 
     <body>
         <website-header></website-header>
-        <section class="bg-light bg-gradient">
-            <div class="container py-5">
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col">
-                        <article class="card h-100 bg-white">
-                            <div
-                                class="card-body text-center d-flex flex-column"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="./assets/img/products/roald-dahl-matilda.webp"
-                                    alt=""
-                                />
-                                <hgroup class="py-2">
-                                    <h4 class="card-title">Matilda</h4>
-                                    <p class="card-text">Roald Dahl</p>
-                                    <span class="card-text">12.99 &euro;</span>
-                                </hgroup>
-                                <div
-                                    class="d-grid gap-2 d-block d-lg-flex justify-content-lg-center mt-auto pt-1"
-                                >
-                                    <button
-                                        class="btn btn-primary me-md-2 w-100"
-                                        type="button"
-                                    >
-                                        Read more
-                                    </button>
-                                    <button
-                                        class="btn btn-warning w-100"
-                                        type="button"
-                                    >
-                                        Add to cart
-                                    </button>
+        <main>
+            <section class="bg-light bg-gradient">
+                <div class="product-list__content container py-5">
+                    <div class="product-list__filter">
+                        <aside class="category__filter-block">
+                            <div class="filter__content">
+                                <div class="filter__block">
+                                    <div class="filter__block-title">
+                                        <span>Filters</span>
+                                    </div>
+                                    <div class="filter__block-content">
+                                        <label for="most-popular"
+                                            ><input
+                                                type="checkbox"
+                                                id="most-popular"
+                                            />
+                                            <span>Most Popular</span></label
+                                        >
+                                        <label for="on-sale"
+                                            ><input
+                                                type="checkbox"
+                                                id="on-sale"
+                                            />
+                                            <span>On Sale</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="filter__block">
+                                    <div class="filter__block-title">
+                                        <span>Availability</span>
+                                    </div>
+                                    <div class="filter__block-content">
+                                        <label for="in-stock"
+                                            ><input
+                                                type="checkbox"
+                                                id="in-stock"
+                                            />
+                                            <span>In Stock</span></label
+                                        >
+                                        <label for="comming-soon"
+                                            ><input
+                                                type="checkbox"
+                                                id="comming-soon"
+                                            />
+                                            <span>Comming Soon</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="filter__block">
+                                    <div class="filter__block-title">
+                                        <span>Age</span>
+                                    </div>
+                                    <div class="filter__block-content">
+                                        <label for="early-reader"
+                                            ><input
+                                                type="checkbox"
+                                                id="early-reader"
+                                            />
+                                            <span
+                                                >Early reader 6-10</span
+                                            ></label
+                                        >
+                                        <label for="middle-grade"
+                                            ><input
+                                                type="checkbox"
+                                                id="middle-grade"
+                                            />
+                                            <span
+                                                >Middle Grade 8-12</span
+                                            ></label
+                                        >
+                                        <label for="young-adult"
+                                            ><input
+                                                type="checkbox"
+                                                id="young-adult"
+                                            />
+                                            <span>Young-adult</span></label
+                                        >
+                                        <label for="adult"
+                                            ><input
+                                                type="checkbox"
+                                                id="adult"
+                                            />
+                                            <span>Adult</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="filter__block">
+                                    <div class="filter__block-title">
+                                        <span>Category</span>
+                                    </div>
+                                    <div class="filter__block-content">
+                                        <label for="detective"
+                                            ><input
+                                                type="checkbox"
+                                                id="detective"
+                                            />
+                                            <span
+                                                >Detective stories</span
+                                            ></label
+                                        >
+                                        <label for="comic-books"
+                                            ><input
+                                                type="checkbox"
+                                                id="comic-books"
+                                            />
+                                            <span>Comic books</span></label
+                                        >
+                                        <label for="fantasy"
+                                            ><input
+                                                type="checkbox"
+                                                id="fantasy"
+                                            />
+                                            <span>Fantasy</span></label
+                                        >
+                                        <label for="sci-fi"
+                                            ><input
+                                                type="checkbox"
+                                                id="sci-fi"
+                                            />
+                                            <span>Science Fiction</span></label
+                                        >
+                                        <label for="adventures"
+                                            ><input
+                                                type="checkbox"
+                                                id="adventures"
+                                            />
+                                            <span>Adventures</span></label
+                                        >
+                                        <label for="classic"
+                                            ><input
+                                                type="checkbox"
+                                                id="classic"
+                                            />
+                                            <span>Classic books</span></label
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="filter__block">
+                                    <div class="filter__block-title">
+                                        <span>Language</span>
+                                    </div>
+                                    <div class="filter__block-content">
+                                        <label for="dutch"
+                                            ><input
+                                                type="checkbox"
+                                                id="dutch"
+                                            />
+                                            <span>Dutch</span></label
+                                        >
+                                        <label for="english"
+                                            ><input
+                                                type="checkbox"
+                                                id="english"
+                                            />
+                                            <span>English</span></label
+                                        >
+                                        <label for="german"
+                                            ><input
+                                                type="checkbox"
+                                                id="german"
+                                            />
+                                            <span>German</span></label
+                                        >
+                                        <label for="ukrainian"
+                                            ><input
+                                                type="checkbox"
+                                                id="ukrainian"
+                                            />
+                                            <span>Ukrainian</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="filter__block">
+                                    <div class="filter__block-title">
+                                        <span>Price</span>
+                                    </div>
+                                    <div class="filter__block-content">
+                                        <div class="filter__price">
+                                            <div class="filter__price--min">
+                                                <div class="">
+                                                    <span>from</span>
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        step="50"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="filter__price--max">
+                                                <div class="">
+                                                    <span>to</span>
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        step="50"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <button>Apply</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </article>
+                        </aside>
                     </div>
-                    <div class="col">
-                        <article class="card h-100 bg-white">
-                            <div
-                                class="card-body text-center d-flex flex-column"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="./assets/img/products/michael-bond-paddington.webp"
-                                    alt=""
-                                />
-                                <hgroup class="py-2">
-                                    <h4 class="card-title">
-                                        Paddington at the Palace
-                                    </h4>
-                                    <p class="card-text">Michael Bond</p>
-                                    <span class="card-text">9.99 &euro;</span>
-                                </hgroup>
+                    <div
+                        class="product-list__gallery row row-cols-1 row-cols-md-4 g-8"
+                    >
+                        <div class="col">
+                            <article class="card h-100 bg-white">
                                 <div
-                                    class="d-grid gap-2 d-block d-lg-flex justify-content-lg-center mt-auto pt-1"
+                                    class="card-body text-center d-flex flex-column"
                                 >
-                                    <button
-                                        class="btn btn-primary me-md-2 w-100"
-                                        type="button"
+                                    <img
+                                        class="img-fluid"
+                                        src="./assets/img/products/roald-dahl-matilda.webp"
+                                        alt=""
+                                    />
+                                    <hgroup class="py-2">
+                                        <h4 class="card-title">Matilda</h4>
+                                        <p class="card-text">Roald Dahl</p>
+                                        <span class="card-text"
+                                            >12.99 &euro;</span
+                                        >
+                                    </hgroup>
+                                    <div
+                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
                                     >
-                                        Read more
-                                    </button>
-                                    <button
-                                        class="btn btn-warning w-100"
-                                        type="button"
-                                    >
-                                        Add to cart
-                                    </button>
+                                        <button
+                                            class="btn btn-primary me-md-2 w-100"
+                                            type="button"
+                                        >
+                                            Read more
+                                        </button>
+                                        <button
+                                            class="btn btn-warning w-100"
+                                            type="button"
+                                        >
+                                            Add to cart
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col">
-                        <article class="card h-100 bg-white">
-                            <div
-                                class="card-body text-center d-flex flex-column"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="./assets/img/products/little-people-big-dreams-charles-darwin.webp"
-                                    alt=""
-                                />
-                                <hgroup class="py-2">
-                                    <h4 class="card-title">Charles Darwin</h4>
-                                    <p class="card-text">Maria Vegara</p>
-                                    <span class="card-text">13.99 &euro;</span>
-                                </hgroup>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card h-100 bg-white">
                                 <div
-                                    class="d-grid gap-2 d-block d-lg-flex justify-content-lg-center mt-auto pt-1"
+                                    class="card-body text-center d-flex flex-column"
                                 >
-                                    <button
-                                        class="btn btn-primary me-md-2 w-100"
-                                        type="button"
+                                    <img
+                                        class="img-fluid"
+                                        src="./assets/img/products/michael-bond-paddington.webp"
+                                        alt=""
+                                    />
+                                    <hgroup class="py-2">
+                                        <h4 class="card-title">
+                                            Paddington at the Palace
+                                        </h4>
+                                        <p class="card-text">Michael Bond</p>
+                                        <span class="card-text"
+                                            >9.99 &euro;</span
+                                        >
+                                    </hgroup>
+                                    <div
+                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
                                     >
-                                        Read more
-                                    </button>
-                                    <button
-                                        class="btn btn-warning w-100"
-                                        type="button"
-                                    >
-                                        Add to cart
-                                    </button>
+                                        <button
+                                            class="btn btn-primary me-md-2 w-100"
+                                            type="button"
+                                        >
+                                            Read more
+                                        </button>
+                                        <button
+                                            class="btn btn-warning w-100"
+                                            type="button"
+                                        >
+                                            Add to cart
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col">
-                        <article class="card h-100 bg-white">
-                            <div
-                                class="card-body text-center d-flex flex-column"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="./assets/img/products/lewis-carrol-through-the-looking-glass.webp"
-                                    alt=""
-                                />
-                                <hgroup class="py-2">
-                                    <h4 class="card-title">
-                                        Through the looking glass
-                                    </h4>
-                                    <p class="card-text">Lewis Carrol</p>
-                                    <span class="card-text">13.99 &euro;</span>
-                                </hgroup>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card h-100 bg-white">
                                 <div
-                                    class="d-grid gap-2 d-block d-lg-flex justify-content-lg-center mt-auto pt-1"
+                                    class="card-body text-center d-flex flex-column"
                                 >
-                                    <button
-                                        class="btn btn-primary me-md-2 w-100"
-                                        type="button"
+                                    <img
+                                        class="img-fluid"
+                                        src="./assets/img/products/little-people-big-dreams-charles-darwin.webp"
+                                        alt=""
+                                    />
+                                    <hgroup class="py-2">
+                                        <h4 class="card-title">
+                                            Charles Darwin
+                                        </h4>
+                                        <p class="card-text">Maria Vegara</p>
+                                        <span class="card-text"
+                                            >13.99 &euro;</span
+                                        >
+                                    </hgroup>
+                                    <div
+                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
                                     >
-                                        Read more
-                                    </button>
-                                    <button
-                                        class="btn btn-warning w-100"
-                                        type="button"
-                                    >
-                                        Add to cart
-                                    </button>
+                                        <button
+                                            class="btn btn-primary me-md-2 w-100"
+                                            type="button"
+                                        >
+                                            Read more
+                                        </button>
+                                        <button
+                                            class="btn btn-warning w-100"
+                                            type="button"
+                                        >
+                                            Add to cart
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col">
-                        <article class="card h-100 bg-white">
-                            <div
-                                class="card-body text-center d-flex flex-column"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="./assets/img/products/lewis-carrol-alices-adventures-in-wonderland.webp"
-                                    alt=""
-                                />
-                                <hgroup class="py-2">
-                                    <h4 class="card-title">
-                                        Alice's adventures in Wonderland
-                                    </h4>
-                                    <p class="card-text">Lewis Carrol</p>
-                                    <span class="card-text">14.99 &euro;</span>
-                                </hgroup>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card h-100 bg-white">
                                 <div
-                                    class="d-grid gap-2 d-block d-lg-flex justify-content-lg-center mt-auto pt-1"
+                                    class="card-body text-center d-flex flex-column"
                                 >
-                                    <button
-                                        class="btn btn-primary me-md-2 w-100"
-                                        type="button"
+                                    <img
+                                        class="img-fluid"
+                                        src="./assets/img/products/lewis-carrol-through-the-looking-glass.webp"
+                                        alt=""
+                                    />
+                                    <hgroup class="py-2">
+                                        <h4 class="card-title">
+                                            Through the looking glass
+                                        </h4>
+                                        <p class="card-text">Lewis Carrol</p>
+                                        <span class="card-text"
+                                            >13.99 &euro;</span
+                                        >
+                                    </hgroup>
+                                    <div
+                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
                                     >
-                                        Read more
-                                    </button>
-                                    <button
-                                        class="btn btn-warning w-100"
-                                        type="button"
-                                    >
-                                        Add to cart
-                                    </button>
+                                        <button
+                                            class="btn btn-primary me-md-2 w-100"
+                                            type="button"
+                                        >
+                                            Read more
+                                        </button>
+                                        <button
+                                            class="btn btn-warning w-100"
+                                            type="button"
+                                        >
+                                            Add to cart
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col">
-                        <article class="card h-100 bg-white">
-                            <div
-                                class="card-body text-center d-flex flex-column"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="./assets/img/products/michael-bond-paddington-at-the-zoo.webp"
-                                    alt=""
-                                />
-                                <hgroup class="py-2">
-                                    <h4 class="card-title">
-                                        Paddington at the zoo
-                                    </h4>
-                                    <p class="card-text">Michael Bond</p>
-                                    <span class="card-text">12.99 &euro;</span>
-                                </hgroup>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card h-100 bg-white">
                                 <div
-                                    class="d-grid gap-2 d-block d-lg-flex justify-content-lg-center mt-auto pt-1"
+                                    class="card-body text-center d-flex flex-column"
                                 >
-                                    <button
-                                        class="btn btn-primary me-md-2 w-100"
-                                        type="button"
+                                    <img
+                                        class="img-fluid"
+                                        src="./assets/img/products/lewis-carrol-alices-adventures-in-wonderland.webp"
+                                        alt=""
+                                    />
+                                    <hgroup class="py-2">
+                                        <h4 class="card-title">
+                                            Alice's adventures in Wonderland
+                                        </h4>
+                                        <p class="card-text">Lewis Carrol</p>
+                                        <span class="card-text"
+                                            >14.99 &euro;</span
+                                        >
+                                    </hgroup>
+                                    <div
+                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
                                     >
-                                        Read more
-                                    </button>
-                                    <button
-                                        class="btn btn-warning w-100"
-                                        type="button"
-                                    >
-                                        Add to cart
-                                    </button>
+                                        <button
+                                            class="btn btn-primary me-md-2 w-100"
+                                            type="button"
+                                        >
+                                            Read more
+                                        </button>
+                                        <button
+                                            class="btn btn-warning w-100"
+                                            type="button"
+                                        >
+                                            Add to cart
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card h-100 bg-white">
+                                <div
+                                    class="card-body text-center d-flex flex-column"
+                                >
+                                    <img
+                                        class="img-fluid"
+                                        src="./assets/img/products/michael-bond-paddington-at-the-zoo.webp"
+                                        alt=""
+                                    />
+                                    <hgroup class="py-2">
+                                        <h4 class="card-title">
+                                            Paddington at the zoo
+                                        </h4>
+                                        <p class="card-text">Michael Bond</p>
+                                        <span class="card-text"
+                                            >12.99 &euro;</span
+                                        >
+                                    </hgroup>
+                                    <div
+                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
+                                    >
+                                        <button
+                                            class="btn btn-primary me-md-2 w-100"
+                                            type="button"
+                                        >
+                                            Read more
+                                        </button>
+                                        <button
+                                            class="btn btn-warning w-100"
+                                            type="button"
+                                        >
+                                            Add to cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="bg-light bg-gradient">
-            <div class="container">
-                <nav aria-label="Navigation between product-list pages">
-                    <ul class="pagination justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="product-list.html">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="product-list-2.html"
-                                >2</a
-                            >
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="product-list-3.html"
-                                >3</a
-                            >
-                        </li>
-                        <li class="page-item">
-                            <a
-                                class="page-link"
-                                href="product-list-2.html"
-                                aria-label="Next"
-                            >
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
+            </section>
+            <section class="pagination bg-light bg-gradient">
+                <div class="container">
+                    <nav aria-label="Navigation between product-list pages">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item disabled">
+                                <a
+                                    class="page-link"
+                                    href="#"
+                                    aria-label="Previous"
+                                >
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="product-list.html"
+                                    >1</a
+                                >
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="product-list-2.html"
+                                    >2</a
+                                >
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="product-list-3.html"
+                                    >3</a
+                                >
+                            </li>
+                            <li class="page-item">
+                                <a
+                                    class="page-link"
+                                    href="product-list-2.html"
+                                    aria-label="Next"
+                                >
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </main>
         <website-footer></website-footer>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"
         ></script>
-        <script src="headerFooter.js"></script>
+        <script src="./javascript/headerFooter.js"></script>
+        <script src="./javascript/script.js"></script>
     </body>
 </html>
