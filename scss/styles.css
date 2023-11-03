@@ -1,4 +1,29 @@
 .product-list__content {
   display: flex;
   gap: 4rem;
+}
+
+.filter {
+  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+}
+.filter__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.filter__content label {
+  display: flex;
+  gap: 8px;
+}
+.filter__block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.filter__block-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }/*# sourceMappingURL=styles.css.map */

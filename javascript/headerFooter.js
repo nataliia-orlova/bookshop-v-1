@@ -1,6 +1,9 @@
 class WebsiteHeader extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = ` <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
+        this.innerHTML =
+            /*html*/
+            ` 
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
         <div class="container">
             <a href="index.html" class="navbar-brand">
                 <span class="text-warning">PARROT</span> BOOKS</a
@@ -85,7 +88,9 @@ customElements.define('website-header', WebsiteHeader);
 
 class WebsiteFooter extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<footer class="bg-dark py-5 text-center text-white position-relative">
+        this.innerHTML =
+            /*html*/
+            `<footer class="bg-dark py-5 text-center text-white position-relative">
         <div class="container">
             <small>Copyright &copy; <span class="text-warning">PARROT</span> BOOKS</small>
             <a href="#" class="position-absolute bottom-0 end-0 p-5">

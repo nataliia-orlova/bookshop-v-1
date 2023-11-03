@@ -23,7 +23,7 @@
             <section class="bg-light bg-gradient">
                 <div class="product-list__content container py-5">
                     <div class="product-list__filter">
-                        <aside class="category__filter-block">
+                        <aside class="filter">
                             <div class="filter__content">
                                 <div class="filter__block">
                                     <div class="filter__block-title">
@@ -120,12 +120,12 @@
                                                 >Detective stories</span
                                             ></label
                                         >
-                                        <label for="comic-books"
+                                        <label for="biographies"
                                             ><input
                                                 type="checkbox"
-                                                id="comic-books"
+                                                id="biographies"
                                             />
-                                            <span>Comic books</span></label
+                                            <span>Biographies</span></label
                                         >
                                         <label for="fantasy"
                                             ><input
@@ -200,7 +200,9 @@
                                     <div class="filter__block-content">
                                         <div class="filter__price">
                                             <div class="filter__price--min">
-                                                <div class="">
+                                                <div
+                                                    class="filter__price--range"
+                                                >
                                                     <span>from</span>
                                                     <input
                                                         type="number"
@@ -210,7 +212,9 @@
                                                 </div>
                                             </div>
                                             <div class="filter__price--max">
-                                                <div class="">
+                                                <div
+                                                    class="filter__price--range"
+                                                >
                                                     <span>to</span>
                                                     <input
                                                         type="number"
@@ -219,243 +223,17 @@
                                                     />
                                                 </div>
                                             </div>
-                                            <button>Apply</button>
                                         </div>
+                                        <button>Apply</button>
                                     </div>
                                 </div>
                             </div>
                         </aside>
                     </div>
                     <div
+                        id="product-gallery"
                         class="product-list__gallery row row-cols-1 row-cols-md-4 g-8"
-                    >
-                        <div class="col">
-                            <article class="card h-100 bg-white">
-                                <div
-                                    class="card-body text-center d-flex flex-column"
-                                >
-                                    <img
-                                        class="img-fluid"
-                                        src="./assets/img/products/roald-dahl-matilda.webp"
-                                        alt=""
-                                    />
-                                    <hgroup class="py-2">
-                                        <h4 class="card-title">Matilda</h4>
-                                        <p class="card-text">Roald Dahl</p>
-                                        <span class="card-text"
-                                            >12.99 &euro;</span
-                                        >
-                                    </hgroup>
-                                    <div
-                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
-                                    >
-                                        <button
-                                            class="btn btn-primary me-md-2 w-100"
-                                            type="button"
-                                        >
-                                            Read more
-                                        </button>
-                                        <button
-                                            class="btn btn-warning w-100"
-                                            type="button"
-                                        >
-                                            Add to cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article class="card h-100 bg-white">
-                                <div
-                                    class="card-body text-center d-flex flex-column"
-                                >
-                                    <img
-                                        class="img-fluid"
-                                        src="./assets/img/products/michael-bond-paddington.webp"
-                                        alt=""
-                                    />
-                                    <hgroup class="py-2">
-                                        <h4 class="card-title">
-                                            Paddington at the Palace
-                                        </h4>
-                                        <p class="card-text">Michael Bond</p>
-                                        <span class="card-text"
-                                            >9.99 &euro;</span
-                                        >
-                                    </hgroup>
-                                    <div
-                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
-                                    >
-                                        <button
-                                            class="btn btn-primary me-md-2 w-100"
-                                            type="button"
-                                        >
-                                            Read more
-                                        </button>
-                                        <button
-                                            class="btn btn-warning w-100"
-                                            type="button"
-                                        >
-                                            Add to cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article class="card h-100 bg-white">
-                                <div
-                                    class="card-body text-center d-flex flex-column"
-                                >
-                                    <img
-                                        class="img-fluid"
-                                        src="./assets/img/products/little-people-big-dreams-charles-darwin.webp"
-                                        alt=""
-                                    />
-                                    <hgroup class="py-2">
-                                        <h4 class="card-title">
-                                            Charles Darwin
-                                        </h4>
-                                        <p class="card-text">Maria Vegara</p>
-                                        <span class="card-text"
-                                            >13.99 &euro;</span
-                                        >
-                                    </hgroup>
-                                    <div
-                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
-                                    >
-                                        <button
-                                            class="btn btn-primary me-md-2 w-100"
-                                            type="button"
-                                        >
-                                            Read more
-                                        </button>
-                                        <button
-                                            class="btn btn-warning w-100"
-                                            type="button"
-                                        >
-                                            Add to cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article class="card h-100 bg-white">
-                                <div
-                                    class="card-body text-center d-flex flex-column"
-                                >
-                                    <img
-                                        class="img-fluid"
-                                        src="./assets/img/products/lewis-carrol-through-the-looking-glass.webp"
-                                        alt=""
-                                    />
-                                    <hgroup class="py-2">
-                                        <h4 class="card-title">
-                                            Through the looking glass
-                                        </h4>
-                                        <p class="card-text">Lewis Carrol</p>
-                                        <span class="card-text"
-                                            >13.99 &euro;</span
-                                        >
-                                    </hgroup>
-                                    <div
-                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
-                                    >
-                                        <button
-                                            class="btn btn-primary me-md-2 w-100"
-                                            type="button"
-                                        >
-                                            Read more
-                                        </button>
-                                        <button
-                                            class="btn btn-warning w-100"
-                                            type="button"
-                                        >
-                                            Add to cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article class="card h-100 bg-white">
-                                <div
-                                    class="card-body text-center d-flex flex-column"
-                                >
-                                    <img
-                                        class="img-fluid"
-                                        src="./assets/img/products/lewis-carrol-alices-adventures-in-wonderland.webp"
-                                        alt=""
-                                    />
-                                    <hgroup class="py-2">
-                                        <h4 class="card-title">
-                                            Alice's adventures in Wonderland
-                                        </h4>
-                                        <p class="card-text">Lewis Carrol</p>
-                                        <span class="card-text"
-                                            >14.99 &euro;</span
-                                        >
-                                    </hgroup>
-                                    <div
-                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
-                                    >
-                                        <button
-                                            class="btn btn-primary me-md-2 w-100"
-                                            type="button"
-                                        >
-                                            Read more
-                                        </button>
-                                        <button
-                                            class="btn btn-warning w-100"
-                                            type="button"
-                                        >
-                                            Add to cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article class="card h-100 bg-white">
-                                <div
-                                    class="card-body text-center d-flex flex-column"
-                                >
-                                    <img
-                                        class="img-fluid"
-                                        src="./assets/img/products/michael-bond-paddington-at-the-zoo.webp"
-                                        alt=""
-                                    />
-                                    <hgroup class="py-2">
-                                        <h4 class="card-title">
-                                            Paddington at the zoo
-                                        </h4>
-                                        <p class="card-text">Michael Bond</p>
-                                        <span class="card-text"
-                                            >12.99 &euro;</span
-                                        >
-                                    </hgroup>
-                                    <div
-                                        class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
-                                    >
-                                        <button
-                                            class="btn btn-primary me-md-2 w-100"
-                                            type="button"
-                                        >
-                                            Read more
-                                        </button>
-                                        <button
-                                            class="btn btn-warning w-100"
-                                            type="button"
-                                        >
-                                            Add to cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
+                    ></div>
                 </div>
             </section>
             <section class="pagination bg-light bg-gradient">
@@ -507,6 +285,6 @@
             crossorigin="anonymous"
         ></script>
         <script src="./javascript/headerFooter.js"></script>
-        <script src="./javascript/script.js"></script>
+        <script src="./javascript/script.js" type="module"></script>
     </body>
 </html>
