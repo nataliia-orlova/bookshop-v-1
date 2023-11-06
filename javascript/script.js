@@ -1,7 +1,7 @@
 import { products } from './products.js';
 
-//Initial render of all products
-function showAllProducts(products) {
+//Function to display products:
+function showProducts(products) {
     const productGallery = document.getElementById('product-gallery');
     //Clear previous products
     productGallery.innerHTML = '';
@@ -52,4 +52,6 @@ function showAllProducts(products) {
         productGallery.appendChild(productCard);
     });
 }
-showAllProducts(products);
+
+//Initial display of all products:
+showProducts(products);
