@@ -34,3 +34,9 @@
         gap: 6px;
     }
 }
+
+.applied-filters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

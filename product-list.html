@@ -30,17 +30,11 @@
                                         <span>Filters</span>
                                     </div>
                                     <div class="filter__block-content">
-                                        <label for="most-popular"
-                                            ><input
-                                                type="checkbox"
-                                                id="most-popular"
-                                            />
-                                            <span>Most Popular</span></label
-                                        >
                                         <label for="on-sale"
                                             ><input
                                                 type="checkbox"
                                                 id="on-sale"
+                                                value="on-sale"
                                             />
                                             <span>On Sale</span></label
                                         >
@@ -55,6 +49,7 @@
                                             ><input
                                                 type="checkbox"
                                                 id="in-stock"
+                                                value="in-stock"
                                             />
                                             <span>In Stock</span></label
                                         >
@@ -62,6 +57,7 @@
                                             ><input
                                                 type="checkbox"
                                                 id="comming-soon"
+                                                value="comming-soon"
                                             />
                                             <span>Comming Soon</span></label
                                         >
@@ -76,6 +72,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="early-reader"
+                                                value="early-reader"
+                                                name="age"
                                             />
                                             <span
                                                 >Early reader 6-10</span
@@ -85,6 +83,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="middle-grade"
+                                                value="middle-grade"
+                                                name="age"
                                             />
                                             <span
                                                 >Middle Grade 8-12</span
@@ -94,6 +94,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="young-adult"
+                                                value="young-adult"
+                                                name="age"
                                             />
                                             <span>Young-adult</span></label
                                         >
@@ -101,6 +103,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="adult"
+                                                value="adult"
+                                                name="age"
                                             />
                                             <span>Adult</span></label
                                         >
@@ -115,6 +119,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="detective"
+                                                value="detective"
+                                                name="category"
                                             />
                                             <span
                                                 >Detective stories</span
@@ -124,6 +130,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="biographies"
+                                                value="biographies"
+                                                name="category"
                                             />
                                             <span>Biographies</span></label
                                         >
@@ -131,6 +139,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="fantasy"
+                                                value="fantasy"
+                                                name="category"
                                             />
                                             <span>Fantasy</span></label
                                         >
@@ -138,6 +148,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="sci-fi"
+                                                value="sci-fi"
+                                                name="category"
                                             />
                                             <span>Science Fiction</span></label
                                         >
@@ -145,6 +157,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="adventures"
+                                                value="adventures"
+                                                name="category"
                                             />
                                             <span>Adventures</span></label
                                         >
@@ -152,6 +166,8 @@
                                             ><input
                                                 type="checkbox"
                                                 id="classic"
+                                                value="classic"
+                                                name="category"
                                             />
                                             <span>Classic books</span></label
                                         >
@@ -168,6 +184,7 @@
                                                 type="checkbox"
                                                 id="dutch"
                                                 value="dutch"
+                                                name="language"
                                             />
                                             <span>Dutch</span></label
                                         >
@@ -176,6 +193,7 @@
                                                 type="checkbox"
                                                 id="english"
                                                 value="english"
+                                                name="language"
                                             />
                                             <span>English</span></label
                                         >
@@ -184,6 +202,7 @@
                                                 type="checkbox"
                                                 id="german"
                                                 value="german"
+                                                name="language"
                                             />
                                             <span>German</span></label
                                         >
@@ -192,6 +211,7 @@
                                                 type="checkbox"
                                                 id="ukrainian"
                                                 value="ukrainian"
+                                                name="language"
                                             />
                                             <span>Ukrainian</span></label
                                         >
@@ -234,10 +254,26 @@
                             </div>
                         </aside>
                     </div>
-                    <div
-                        id="product-gallery"
-                        class="product-list__gallery row row-cols-1 row-cols-md-4 g-4"
-                    ></div>
+
+                    <div class="product-list__display">
+                        <div class="applied-filters">
+                            <div class="">placeholder</div>
+                            <div class="">placeholder</div>
+                            <div class="">placeholder</div>
+                        </div>
+                        <div class="product-list__sort"></div>
+                        <label for="sort">Sort by</label>
+
+                        <select name="sort" id="sort">
+                            <option value="">Popularity</option>
+                            <option value="">Price ascending</option>
+                            <option value="">Price descending</option>
+                        </select>
+                        <div
+                            id="product-gallery"
+                            class="product-list__gallery row row-cols-1 row-cols-md-4 g-4"
+                        ></div>
+                    </div>
                 </div>
             </section>
             <section class="pagination bg-light bg-gradient">

@@ -1,14 +1,17 @@
 import { products } from './products.js';
 
-//Function to display products:
+//Create a function to display products:
 function showProducts(products) {
     const productGallery = document.getElementById('product-gallery');
     //Clear previous products
     productGallery.innerHTML = '';
     //Loop through the array of products and render them in the gallery
     products.forEach((product) => {
+        //Create card for every object in the array
         const productCard = document.createElement('div');
+        //Add bootstrap styling
         productCard.className = 'col';
+        //Add html content to each card
         productCard.innerHTML =
             /*html*/
             `
@@ -49,9 +52,34 @@ function showProducts(products) {
             </div>
         </article>
         `;
+        //Add the cards to the DOM
         productGallery.appendChild(productCard);
     });
 }
 
 //Initial display of all products:
 showProducts(products);
+
+//Get checkboxes from the DOM
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+//Create a function that updates the gallery
+function updateList() {
+    //Create array from the checkboxes (array-like elements) and assign it to a variable
+    const selectedCheckboxes = Array.from(checkboxes)
+        //Filter checked checkboxes
+        .filter((checkbox) => checkbox.checked)
+        //Create a new array of items with the same value
+        .map((checkbox) => checkbox.value);
+
+    let filteredProducts = products.filter((product) =>
+        selectedCheckboxes.includes(product.category)
+    );
+
+    showProducts(filteredProducts);
+}
+
+//Add event listeners to checkboxes
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', updateList);
+});

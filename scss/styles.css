@@ -26,4 +26,10 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.applied-filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }/*# sourceMappingURL=styles.css.map */
