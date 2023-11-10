@@ -29,12 +29,13 @@
                                     <div class="filter__block-title">
                                         <span>Filters</span>
                                     </div>
-                                    <div class="filter__block-content">
+                                    <div class="on-sale filter__block-content">
                                         <label for="on-sale"
                                             ><input
                                                 type="checkbox"
                                                 id="on-sale"
-                                                value="on-sale"
+                                                value="onSale"
+                                                data-name="On Sale"
                                             />
                                             <span>On Sale</span></label
                                         >
@@ -50,6 +51,8 @@
                                                 type="checkbox"
                                                 id="in-stock"
                                                 value="in-stock"
+                                                name="availability"
+                                                data-name="In Stock"
                                             />
                                             <span>In Stock</span></label
                                         >
@@ -58,6 +61,8 @@
                                                 type="checkbox"
                                                 id="comming-soon"
                                                 value="comming-soon"
+                                                name="availability"
+                                                data-name="Comming Soon"
                                             />
                                             <span>Comming Soon</span></label
                                         >
@@ -73,7 +78,8 @@
                                                 type="checkbox"
                                                 id="early-reader"
                                                 value="early-reader"
-                                                name="age"
+                                                name="ageRange"
+                                                data-name="Early reader 6-10"
                                             />
                                             <span
                                                 >Early reader 6-10</span
@@ -84,7 +90,8 @@
                                                 type="checkbox"
                                                 id="middle-grade"
                                                 value="middle-grade"
-                                                name="age"
+                                                name="ageRange"
+                                                data-name="Middle Grade 8-12"
                                             />
                                             <span
                                                 >Middle Grade 8-12</span
@@ -95,7 +102,8 @@
                                                 type="checkbox"
                                                 id="young-adult"
                                                 value="young-adult"
-                                                name="age"
+                                                name="ageRange"
+                                                data-name="Young-adult"
                                             />
                                             <span>Young-adult</span></label
                                         >
@@ -104,7 +112,8 @@
                                                 type="checkbox"
                                                 id="adult"
                                                 value="adult"
-                                                name="age"
+                                                name="ageRange"
+                                                data-name="Adult"
                                             />
                                             <span>Adult</span></label
                                         >
@@ -114,13 +123,14 @@
                                     <div class="filter__block-title">
                                         <span>Category</span>
                                     </div>
-                                    <div class="filter__block-content">
+                                    <div class="category filter__block-content">
                                         <label for="detective"
                                             ><input
                                                 type="checkbox"
                                                 id="detective"
                                                 value="detective"
                                                 name="category"
+                                                data-name="Detective Stories"
                                             />
                                             <span
                                                 >Detective stories</span
@@ -132,6 +142,7 @@
                                                 id="biographies"
                                                 value="biographies"
                                                 name="category"
+                                                data-name="Biographies"
                                             />
                                             <span>Biographies</span></label
                                         >
@@ -141,6 +152,7 @@
                                                 id="fantasy"
                                                 value="fantasy"
                                                 name="category"
+                                                data-name="Fantasy"
                                             />
                                             <span>Fantasy</span></label
                                         >
@@ -150,6 +162,7 @@
                                                 id="sci-fi"
                                                 value="sci-fi"
                                                 name="category"
+                                                data-name="Science Fiction"
                                             />
                                             <span>Science Fiction</span></label
                                         >
@@ -159,6 +172,7 @@
                                                 id="adventures"
                                                 value="adventures"
                                                 name="category"
+                                                data-name="Adventures"
                                             />
                                             <span>Adventures</span></label
                                         >
@@ -168,6 +182,7 @@
                                                 id="classic"
                                                 value="classic"
                                                 name="category"
+                                                data-name="Classic Books"
                                             />
                                             <span>Classic books</span></label
                                         >
@@ -178,13 +193,14 @@
                                     <div class="filter__block-title">
                                         <span>Language</span>
                                     </div>
-                                    <div class="filter__block-content">
+                                    <div class="language filter__block-content">
                                         <label for="dutch"
                                             ><input
                                                 type="checkbox"
                                                 id="dutch"
                                                 value="dutch"
                                                 name="language"
+                                                data-name="Dutch"
                                             />
                                             <span>Dutch</span></label
                                         >
@@ -194,6 +210,7 @@
                                                 id="english"
                                                 value="english"
                                                 name="language"
+                                                data-name="English"
                                             />
                                             <span>English</span></label
                                         >
@@ -203,6 +220,7 @@
                                                 id="german"
                                                 value="german"
                                                 name="language"
+                                                data-name="German"
                                             />
                                             <span>German</span></label
                                         >
@@ -212,6 +230,7 @@
                                                 id="ukrainian"
                                                 value="ukrainian"
                                                 name="language"
+                                                data-name="Ukrainian"
                                             />
                                             <span>Ukrainian</span></label
                                         >
@@ -256,19 +275,17 @@
                     </div>
 
                     <div class="product-list__display">
-                        <div class="applied-filters">
-                            <div class="">placeholder</div>
-                            <div class="">placeholder</div>
-                            <div class="">placeholder</div>
-                        </div>
-                        <div class="product-list__sort"></div>
-                        <label for="sort">Sort by</label>
+                        <div class="applied-filter"></div>
+                        <div class="product-list__sort">
+                            <label for="sort">Sort by</label>
 
-                        <select name="sort" id="sort">
-                            <option value="">Popularity</option>
-                            <option value="">Price ascending</option>
-                            <option value="">Price descending</option>
-                        </select>
+                            <select name="sort" id="sort">
+                                <option value="">Popularity</option>
+                                <option value="">Price ascending</option>
+                                <option value="">Price descending</option>
+                            </select>
+                        </div>
+
                         <div
                             id="product-gallery"
                             class="product-list__gallery row row-cols-1 row-cols-md-4 g-4"

@@ -3,6 +3,10 @@
         display: flex;
         gap: 4rem;
     }
+
+    &__sort {
+        padding-bottom: 18px;
+    }
 }
 
 .filter {
@@ -35,8 +39,19 @@
     }
 }
 
-.applied-filters {
+.applied-filter {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 18px;
     flex-wrap: wrap;
+    margin-bottom: 12px;
+
+    &__item {
+        background-color: white;
+        padding: 8px;
+    }
+}
+
+.col {
+    min-width: 250px;
 }

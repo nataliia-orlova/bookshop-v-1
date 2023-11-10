@@ -61,25 +61,54 @@ function showProducts(products) {
 showProducts(products);
 
 //Get checkboxes from the DOM
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+//Create array from the checkboxes (array-like elements) and assign it to a variable
+const checkboxes = Array.from(
+    document.querySelectorAll('input[type="checkbox"]')
+);
 
 //Create a function that updates the gallery
-function updateList() {
-    //Create array from the checkboxes (array-like elements) and assign it to a variable
-    const selectedCheckboxes = Array.from(checkboxes)
+function updateList(type) {
+    const selectedCheckboxes = checkboxes
         //Filter checked checkboxes
         .filter((checkbox) => checkbox.checked)
         //Create a new array of items with the same value
         .map((checkbox) => checkbox.value);
 
+    const activeFilters = checkboxes
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => checkbox.dataset.name);
+
+    //Render initial array of products when checkboxes are not checked
+    if (selectedCheckboxes.length === 0) {
+        showProducts(products);
+        return;
+    }
+    //Filter products of chosen type
     let filteredProducts = products.filter((product) =>
-        selectedCheckboxes.includes(product.category)
+        selectedCheckboxes.includes(product[type])
     );
 
+    //Render filtered products
     showProducts(filteredProducts);
+    showFilters(activeFilters);
 }
 
 //Add event listeners to checkboxes
 checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', updateList);
+    checkbox.addEventListener('change', () => {
+        updateList(checkbox.attributes.name?.value ?? checkbox.value);
+    });
 });
+
+//Render applied filters
+function showFilters(activeFilters) {
+    let appliedFilters = document.querySelector('.applied-filter');
+    let appliedFilter = document.createElement('div');
+
+    activeFilters.forEach((activeFilter) => {
+        appliedFilter.classList.add('applied-filter__item');
+        appliedFilter.innerHTML = activeFilter;
+    });
+
+    appliedFilters.appendChild(appliedFilter);
+}
