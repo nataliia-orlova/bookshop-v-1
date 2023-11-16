@@ -66,49 +66,94 @@ const checkboxes = Array.from(
     document.querySelectorAll('input[type="checkbox"]')
 );
 
+let currentSelectedCheckboxes = [];
+
+function setProductList(value, selectedCheckboxes) {
+    //Assign array
+    if (!currentSelectedCheckboxes.length) {
+        currentSelectedCheckboxes = selectedCheckboxes;
+        //Remove from array
+    } else if (currentSelectedCheckboxes.includes(value)) {
+        let currentValueIndex = currentSelectedCheckboxes.indexOf(value);
+        currentSelectedCheckboxes.splice(currentValueIndex, 1);
+        //Add to array
+    } else {
+        currentSelectedCheckboxes.push(value);
+    }
+    console.log(currentSelectedCheckboxes);
+}
+
 //Create a function that updates the gallery
-function updateList(type) {
+function updateList(type, value) {
     const selectedCheckboxes = checkboxes
         //Filter checked checkboxes
         .filter((checkbox) => checkbox.checked)
         //Create a new array of items with the same value
         .map((checkbox) => checkbox.value);
 
+    setProductList(value, selectedCheckboxes);
+
+    //Render filtered products
+    let filteredProducts = products.filter((product) =>
+        currentSelectedCheckboxes.includes(product[type])
+    );
+    showProducts(filteredProducts);
+
+    //Show filter labels
     const activeFilters = checkboxes
         .filter((checkbox) => checkbox.checked)
         .map((checkbox) => checkbox.dataset.name);
+    showFilters(activeFilters);
 
     //Render initial array of products when checkboxes are not checked
-    if (selectedCheckboxes.length === 0) {
+    if (currentSelectedCheckboxes.length === 0) {
         showProducts(products);
         return;
     }
-    //Filter products of chosen type
-    let filteredProducts = products.filter((product) =>
-        selectedCheckboxes.includes(product[type])
-    );
-
-    //Render filtered products
-    showProducts(filteredProducts);
-    showFilters(activeFilters);
 }
 
 //Add event listeners to checkboxes
 checkboxes.forEach((checkbox) => {
     checkbox.addEventListener('change', () => {
-        updateList(checkbox.attributes.name?.value ?? checkbox.value);
+        updateList(checkbox.attributes.name.value, checkbox.value);
     });
 });
 
 //Render applied filters
 function showFilters(activeFilters) {
+    //Select element from the DOM
     let appliedFilters = document.querySelector('.applied-filter');
-    let appliedFilter = document.createElement('div');
+    //Create new element
 
-    activeFilters.forEach((activeFilter) => {
+    let currentActiveFilters = [...new Set(activeFilters)];
+
+    appliedFilters.innerHTML = '';
+
+    currentActiveFilters.forEach((activeFilter) => {
+        let appliedFilter = document.createElement('div');
         appliedFilter.classList.add('applied-filter__item');
         appliedFilter.innerHTML = activeFilter;
+        appliedFilters.appendChild(appliedFilter);
     });
-
-    appliedFilters.appendChild(appliedFilter);
 }
+
+//Sort products
+const select = document.getElementById('select');
+
+select.addEventListener('change', () => {
+    let sortedProducts = [...products];
+    let currentValueIndex = select.selectedIndex;
+    console.log(currentValueIndex);
+    if (currentValueIndex === 1) {
+        sortedProducts.sort((a, b) => b.rating - a.rating);
+        showProducts(sortedProducts);
+    } else if (currentValueIndex === 2) {
+        sortedProducts.sort((a, b) => b.price - a.price);
+        showProducts(sortedProducts);
+    } else if (currentValueIndex === 3) {
+        sortedProducts.sort((a, b) => a.price - b.price);
+        showProducts(sortedProducts);
+    } else {
+        showProducts(sortedProducts);
+    }
+});

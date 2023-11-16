@@ -74,7 +74,7 @@ export const products = [
         price: 11.99,
         availability: 'in-stock',
         onSale: false,
-        rating: 5,
+        rating: 1,
         ageRange: 'early-reader',
     },
     {
@@ -126,7 +126,7 @@ export const products = [
         price: 14.99,
         availability: 'in-stock',
         onSale: false,
-        rating: 5,
+        rating: 6,
         ageRange: 'adult',
     },
     {
@@ -204,7 +204,7 @@ export const products = [
         price: 19.99,
         availability: 'in-stock',
         onSale: true,
-        rating: 5,
+        rating: 6,
         ageRange: 'adult',
     },
     {

@@ -76,7 +76,7 @@ class WebsiteHeader extends HTMLElement {
                         <a href="#" class="nav-link">contact</a>
                     </li>
                 </ul>
-                <i class="bi bi-basket-fill text-warning ps-3"></i>
+                <a href="#"><i class="bi bi-basket-fill ps-3"></i></a>
             </div>
         </div>
     </nav>
