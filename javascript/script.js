@@ -37,14 +37,15 @@ function showProducts(products) {
                     class="d-grid gap-2 d-block justify-content-lg-center mt-auto pt-1"
                 >
                     <button
-                        class="btn btn-primary me-md-2 w-100"
+                        class="btn btn-read-more btn-primary me-md-2 w-100"
                         type="button"
                     >
                         Read more
                     </button>
                     <button
-                        class="btn btn-warning w-100"
+                        class="btn btn-add-to-cart btn-warning w-100"
                         type="button"
+                        data-id="${product.id}"
                     >
                         Add to cart
                     </button>
@@ -57,7 +58,7 @@ function showProducts(products) {
     });
 }
 
-//Initial display of all products:
+//Initial render of all products:
 showProducts(products);
 
 //Get checkboxes from the DOM
@@ -137,13 +138,13 @@ function showFilters(activeFilters) {
     });
 }
 
-//Sort products
+//Sort products with select
 const select = document.getElementById('select');
 
 select.addEventListener('change', () => {
     let sortedProducts = [...products];
     let currentValueIndex = select.selectedIndex;
-    console.log(currentValueIndex);
+
     if (currentValueIndex === 1) {
         sortedProducts.sort((a, b) => b.rating - a.rating);
         showProducts(sortedProducts);
@@ -157,3 +158,62 @@ select.addEventListener('change', () => {
         showProducts(sortedProducts);
     }
 });
+
+//Add products to the shopping card
+const addToCartBtns = document.querySelectorAll('.btn-add-to-cart');
+
+addToCartBtns.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        addToCart(e.target.attributes['data-id'].value);
+    });
+});
+
+let cart = [];
+
+function addToCart(productId) {
+    //Search for product with this productId in products array
+    let selectedProduct = products.find((product) => product.id == productId);
+
+    //Push this product to new cart array
+
+    if (selectedProduct) {
+        cart.push(selectedProduct);
+        renderProductsInCart();
+    }
+}
+
+//Render product in the UI
+function renderProductsInCart() {
+    let cartProducts = document.getElementById('cart-products');
+    let cartProduct = document.createElement('li');
+
+    cart.forEach((product) => {
+        cartProduct.className = 'cart__product';
+        cartProduct.innerHTML =
+            /*html*/
+            ` 
+        <li class="cart__product">
+            <div class="cart__product-img">
+                <img src="${product.img}"/>
+            </div>
+            <div class="cart__item-details">
+                 <p class="cart__item-title">${product.title}</p>
+                 <p class="cart__item-author">${product.author}</p>
+                 <p class="cart__item-price">${product.price} &euro;</p>
+            </div>
+    
+            <div class="cart__product-actions">
+                <div class="cart__product-quantity">
+                    <input type="number" min="0" step="1">
+                </div>
+                <button type="button" class="btn btn-remove btn-danger">
+                Remove
+                </button>
+            </div>
+        </li>
+        `;
+        cartProducts.appendChild(cartProduct);
+    });
+}
+//Remove products from the shopping cart
+// const removeFromCartBtn = document.querySelectorAll('.btn-remove');

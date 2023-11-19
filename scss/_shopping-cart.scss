@@ -1,0 +1,10 @@
+.cart {
+    width: 40vw;
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    overflow-y: visible;
+    &__container {
+    }
+}
