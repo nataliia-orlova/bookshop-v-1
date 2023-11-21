@@ -1,10 +1,37 @@
 .cart {
-    width: 40vw;
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 18px;
+        margin-bottom: 12px;
+    }
+    width: 55vw;
     height: 100vh;
     z-index: 1;
     position: absolute;
     right: 0;
     overflow-y: visible;
+
+    &__products {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    &__product {
+        display: flex;
+        justify-content: space-between;
+
+        &-actions {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__product-img img {
+        max-width: 120px;
+    }
     &__container {
     }
 }
